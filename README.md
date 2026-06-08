@@ -32,7 +32,7 @@ Power BI Dashboard           ← insights & trends
 |---|---|---|
 | 1 — Scraper | ✅ Done | Python scraper targeting Wuzzuf.net, weekly scheduler |
 | 2 — DWH Design | 🔄 In progress | Star schema: fact + 5 dimensions |
-| 3 — SSIS ETL | ⏳ Upcoming | Load, clean, transform into warehouse |
+| 3 — SSIS ETL | 🔄 In progress | Load, clean, transform into warehouse |
 | 4 — Power BI | ⏳ Upcoming | Dashboard with skills, salary, trends |
 
 ## Quickstart

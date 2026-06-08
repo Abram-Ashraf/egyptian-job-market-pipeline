@@ -1,0 +1,40 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\egyptian-job-market-pipeline\\etl\\EgyptianJobMarket_ETL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C7C8C70-6FCE-6F48-BE06-185BFCE64C93}|EgyptianJobMarket_ETL\\EgyptianJobMarket_ETL.dtproj|D:\\Projects\\egyptian-job-market-pipeline\\etl\\EgyptianJobMarket_ETL\\EgyptianJobMarket_ETL\\LoadStaging.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{6C7C8C70-6FCE-6F48-BE06-185BFCE64C93}|EgyptianJobMarket_ETL\\EgyptianJobMarket_ETL.dtproj|solutionrelative:EgyptianJobMarket_ETL\\LoadStaging.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoadStaging.dtsx [Design]",
+              "DocumentMoniker": "D:\\Projects\\egyptian-job-market-pipeline\\etl\\EgyptianJobMarket_ETL\\EgyptianJobMarket_ETL\\LoadStaging.dtsx",
+              "RelativeDocumentMoniker": "EgyptianJobMarket_ETL\\LoadStaging.dtsx",
+              "ToolTip": "D:\\Projects\\egyptian-job-market-pipeline\\etl\\EgyptianJobMarket_ETL\\EgyptianJobMarket_ETL\\LoadStaging.dtsx [Design]",
+              "RelativeToolTip": "EgyptianJobMarket_ETL\\LoadStaging.dtsx [Design]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAiRSURBVFhHzVddU5vHFX7QKwESSHwIYWzAmA8Bjm0wlNihjm3cuI7tJKShUTuesWc6THvTmU5vMtOr9qp/oPdumulMO73LRWf65SRu0jQXyQzjpnWxDUycYDm4QiCE9OrzFT3n7L6AJDAaxxd57Ee7e/bs7rNnP94FX2tsbGxU6axg5MSpV14N/eDnZMdGoYACp8ICkf2hbAULlNV1XN7yo6xOld0qFMz4euI3H954\u002B50Hn90Nq5EqR5HA0y9cnv7JG7\u002B4fjTYIRVK4JYQ0kwDaiGcF5uyq5Ts1I5EiS0Wi\u002BPO3HxudS0\u002Bc\u002Bf2rbf\u002BO/PhXxYXbn8ug1UIQ6eCru6\u002BkdNnX5gcHwki0OwTtjRpcplSsfsb0NpM5NTfKNzXQvmWJuwLUJnStkATHDTLhfuLRndnW0eVy\u002B1NZ62MmVxfMtdX43rIPeHQqYCjxVHYjioaxEFeBo3mdFah2uVADbG2xgFPrYF6twFfnYGGeieavE40e10INBAbXWQzYDgNTIwPo6\u002Br42xX3\u002BGrweHnL3q8zU1VDu51bxQLZLLKpwTuybIsRGMJHB3sxWDfoefqm1p/OnTmtZdr3N565fV4FM9C76mnIVFWwwLyeQtrcROxtRQaG/2Ow8Fgj\u002BGs/lnP8ETI13KgXbvvipIlJoF0AJ4UsgJE\u002BwTzYUplMvjrzY/w53c/wMczt7AYDrvz\u002BXy/x\u002BefdlW7B6XhY1AukDp\u002BYlBTjpzNeo8bg70HkUplsLaeQDJhSv/\u002BZr/TMIxxatGmGu6OHQQ\u002BWQR5Wrw57OuI5xnwN2Hq4hm8/sqLePXyBVw6fw4Tp09h9Phx1NbWqoZ7oHgPEr7KIVEiFXmaTMNwYHSoFxPfHMLFc8/i4tkTOD48RLdADdXuDadOBbx3SiM4F07g5qcRXSrHpbE2dATcuL\u002BUwN9mlJ9MkX7kuKn/GB9sQUeLBw6nk\u002B5HB11fRd\u002BIXVFyirVI7lEjkc5j/lEa90w30bPFZA3ml0wkM5YsaYLShUcpzJm1mE95MJ/2YCFdRyTxkbT0I18YOtnsX\u002BlCle1B/gbzCSyCw8CGtxkFn3\u002BTG/VNdIs7VBsh\u002B1GZ7EV\u002B1E7a8\u002BRJmHwSxbky7HhI\u002BKaptA81ME9MG3YBT1oE8hjkLMtfAYoFEi36qVDbJth/rzZcz3OwePJ7TGY7yiNIPfBMK4VaMo6MNuwCrrdo9uLLP3v42ygRyOKIJLSovZWHY22ZGNlifIVHoqjw0vES88gW2aMlflGx28IUdb8VoEQgd8KPU8pohQ0eJ4501uFIYw5HG7I4wvRlcZjKg\u002B118FQbMqinxkCwrQ5Bbw5BT1rY506jx5PBIbqG3OSn9jgfqEp3YMmDdfjZM9PTP37j\u002BrWpC/DWueSJxRC93ClPgMlRYBv98J6ShytR7S9OVZTYJ89lulqUOGAtmcbsfBi//8NvMfP\u002B29eiDxd\u002BJ4PsgqIIMtQMdUHDLvOAQp2ncSXP1ezDZBF8CKSe89vsbOM6u79KUH5IqKfNjskmA9I/Pt0ijje6vmwlemTkzc9RYruKqF1HpIL0S31xWfoQpTLknigXyAeFUhFIXFpN4b1/RXCT\u002BHf65L3/nwg\u002BIP7jdgT/vL2MlfWsbqeWlpfbXnK7H9FD4lQA2F6xvp0jqDomUk8PV9K4cSuCG7MJvHM3iXfvmXhvzsTNewkRG41nt6LF7YkSKRYi5Dol3p6ERLBCiWUC1XKpjkUk92O4UAh0wAp0brLgP0Ct6QRLGyWC2/AW2LDbs43zul62AfmzQOm3ApQdEr4L7cY0xp7ztDe9kMocHCbpUmSbpuS1f6Uo\u002BrMz0NYxcnT45OSxZwbgrnWiijpaWs1gNmzSI6BR/YmnUUXKHIkY\u002Btvr4aW70l5WTtVWAaLrGXwyF8Xn/0vii0gCi5EkbRkTq6YFw9OI/d3H2vuOn7swMHYhFBw9H1rKDYQyyVgU2eh9PUzJEhPt/WcvA\u002BcfB65Wy2lHR4nj1KQnWDiapMu\u002BCq0\u002Bp3B/cw36O32YOHEMk5dfPDn12lRocvI7oUuXJkPeAydDqGnp1l0LdjgkRBmUosFlraAqbRKTW8ykRJ34szjJK5H2oeGmLnpRf6OvAeMDTTgZbMBYrw8j3T4MHazHM/Ql6t/nxiF/NVrpb2un/jBsR/khoR0tG5o655TbVDsKqI09hHs1DPfKA2Ft7EuykxP7cTueB4XRvmbsJVf90heFTkg6a2E9mcFyLIUwLff9L\u002BOYX1zD7GcxfDIbgUmP2lKUHBJaVo4Ij0sDMLr21eHat7pwdaILV8504fvE0PNd\u002BO6pg5ga70SgsWYzctyOUz4R9uERUJrLFURAMmURKaW8SXkzQynlU/wy1\u002B7bURJBHoDuQRGpouAyDDTWVaNB6KL9pOhzu\u002BB1V8OgV/WmQE07epxncJrJ0t/ILEqEabI4Tlkg0Y74dpQvMVEGkXSL25fOvmxlEuynKcvM4ii17Twk98vLK1EjJlmYjtz2CLJfKXY\u002BJNsElEbEFrNFJUj5atumr\u002BqXbSkt0BYp1NEz05ZaYmpTivII0mbm2fMzKZ8j5tm2ldqUerYROeU9JnmuoxlxysLkENHIGTtiqVzJElOZ7OksLTH7l6DoXPccHp1\u002BKfSj69euXEF8PYFsNkeiebkoCjSIig7nt6LNdXKwhBwt9mMfugdpgtE08NKoH0vLJh5FUyImRcIkmjqCcTOHCD1KPv53BIk7v/4hoh\u002B9qSUVC\u002BweGJke//br11v8LbRpMxQpftCzGK5VFzjndXFb3t5rqsK2u71\u002BtPeP4fyxZnzxcB3h5aQSJZFT4pgsNkEiZ2aXYd59c3eB/taO8fbeI1fX4us0iIz2lVDXEuzsGrv6cv9\u002BD5ZXUlhNZJHNWcjQdsgSeVtk8xZyecoTHzxKIrfw1u4Cnzrqep5Dx/d\u002BpUuVYelPv8Tap3/Upa87gP8DDP/7SGXpJbUAAAAASUVORK5CYII=",
+              "WhenOpened": "2026-06-08T02:34:51.063Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1959 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/8/2026 5:34:50 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-BKQG84L"
+  DTS:CreatorName="DESKTOP-BKQG84L\Bola_Ashraf"
+  DTS:DTSID="{3F5EFDBD-E6D0-44AB-806F-750CACC5D9C5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="LoadStaging"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{630648BF-9775-4152-8649-D083E5FBBF39}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{CC865A02-7152-4E97-B497-2FF9EB09A4BE}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="job_title"
+              DTS:DTSID="{F5B680CB-325D-46DC-B1AA-C86A252477A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="company_name"
+              DTS:DTSID="{0BE11D09-C25A-4516-AABE-3C0F5A8F480E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="location"
+              DTS:DTSID="{8CB31397-0CB0-440E-88CA-D864DF7CA5AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="job_type"
+              DTS:DTSID="{AB8AB861-3429-42D8-AA6B-14C6B39F2621}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="experience_level"
+              DTS:DTSID="{51EBC26E-7405-476E-9C63-BA2F2C66A14C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="years_experience"
+              DTS:DTSID="{F7D808A6-562A-4D6E-989C-F2E0DFD6035F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="skills"
+              DTS:DTSID="{53D9DD9E-4AD0-4B3E-AEDF-DC971EB2836E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="salary_raw"
+              DTS:DTSID="{0AE54B9E-EAAF-475B-9230-7B93D091F4EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="salary_min_egp"
+              DTS:DTSID="{629799EA-4C74-4ED2-B2CE-183DEA9C649D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="salary_max_egp"
+              DTS:DTSID="{D80CF0CB-D2CC-4884-B753-E52B6D7948BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="post_date_raw"
+              DTS:DTSID="{596BA1DD-DC20-470B-82AA-6E507176ED1B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="job_url"
+              DTS:DTSID="{81624F05-C46D-4FA4-9ABB-8B9371F3D35B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="search_keyword"
+              DTS:DTSID="{9ED1866E-1DF2-4F00-A5CE-66AE8D688BC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="scraped_at"
+              DTS:DTSID="{A421EE37-48C4-4885-89B5-6026FF136D6A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2248B468-11CF-4450-9A44-40143545BCEC}"
+      DTS:ObjectName="LocalHost.EgyptianJobMarket">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=EgyptianJobMarket;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-LoadStaging-{2248B468-11CF-4450-9A44-40143545BCEC}LocalHost.EgyptianJobMarket;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EA4F0D44-3512-46D3-B6EA-573D95B56949}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::ArchivePath] + TOKEN(@[User::FilePath],&quot;\\&quot;,TOKENCOUNT(@[User::FilePath],&quot;\\&quot;))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchiveFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Projects\egyptian-job-market-pipeline\scraper\output\archive\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F4A238A7-A9FD-40E8-A976-9FF7DE4D7FAA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ArchivePath">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Projects\egyptian-job-market-pipeline\scraper\output\archive\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1B785F8C-6714-4658-925F-C80859E6D8F0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A1A89197-7307-45BF-B31E-8DA3853FC5B6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Projects\egyptian-job-market-pipeline\scraper\output\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7B7E3725-FC56-4C3F-85A8-475B25C2E9FE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="HasRows">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Check for new files"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{759F74F6-17CF-4D12-9CE2-158E20A23497}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check for new files"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2248B468-11CF-4450-9A44-40143545BCEC}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (&#xA;    SELECT 1 FROM stg.JobPostings WHERE is_processed = 0&#xA;)&#xA;    SELECT 0 AS has_rows&#xA;ELSE&#xA;    SELECT 1 AS has_rows"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::HasRows" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{23D0CD0F-0241-4BB7-97C3-4919C030A9C0}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{5C415BF8-978D-4956-9D7E-48679E1D3BD4}"
+        DTS:ObjectName="{5C415BF8-978D-4956-9D7E-48679E1D3BD4}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\Projects\egyptian-job-market-pipeline\scraper\output\" />
+            <FEFEProperty
+              FileSpec="*.csv" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Load CSV to Staging"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F6C1DA81-2099-4BB2-A5C0-736934349415}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load CSV to Staging"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[load_date]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[load_date]"
+                          name="load_date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBTIMESTAMP)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBTIMESTAMP)GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[is_processed]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[is_processed]"
+                          name="is_processed"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_BOOL) FALSE </property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_BOOL) FALSE </property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[error_message]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="1000"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[error_message]"
+                          name="error_message"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_WSTR,1000)""</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_WSTR,1000)""</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Output].Columns[package_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="11"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Output].Columns[package_name]"
+                          name="package_name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"LoadStaging"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"LoadStaging"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_title]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[job_title]"
+                          length="500"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_title]"
+                          name="job_title"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[company_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[company_name]"
+                          length="500"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[company_name]"
+                          name="company_name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[location]"
+                          length="500"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[location]"
+                          name="location"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[job_type]"
+                          length="1000"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_type]"
+                          name="job_type"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[experience_level]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[experience_level]"
+                          length="1000"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[experience_level]"
+                          name="experience_level"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[years_experience]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[years_experience]"
+                          length="100"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[years_experience]"
+                          name="years_experience"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[skills]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[skills]"
+                          length="4000"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[skills]"
+                          name="skills"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_raw]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[salary_raw]"
+                          length="200"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_raw]"
+                          name="salary_raw"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_min_egp]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[salary_min_egp]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_min_egp]"
+                          name="salary_min_egp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_max_egp]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[salary_max_egp]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_max_egp]"
+                          name="salary_max_egp"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[post_date_raw]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[post_date_raw]"
+                          length="1000"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[post_date_raw]"
+                          name="post_date_raw"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_url]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[job_url]"
+                          length="1000"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_url]"
+                          name="job_url"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[search_keyword]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[search_keyword]"
+                          length="200"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[search_keyword]"
+                          name="search_keyword"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[scraped_at]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[scraped_at]"
+                          length="50"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[scraped_at]"
+                          name="scraped_at"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[job_title]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="job_title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[company_name]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="company_name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[location]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="location" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[job_type]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="job_type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[experience_level]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="experience_level" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[years_experience]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="years_experience" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[skills]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="skills" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[salary_raw]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="salary_raw" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[salary_min_egp]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="salary_min_egp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[salary_max_egp]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="salary_max_egp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[post_date_raw]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="post_date_raw" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[job_url]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="job_url" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[search_keyword]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="search_keyword" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[scraped_at]"
+                          codePage="65001"
+                          dataType="str"
+                          length="50"
+                          name="scraped_at" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="65001"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [stg].[JobPostings]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [stg].[JobPostings]) [refTable]
+where [refTable].[job_url] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="stg_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="job_title" dataType="DT_WSTR" length="500" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="company_name" dataType="DT_WSTR" length="500" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="location" dataType="DT_WSTR" length="500" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="job_type" dataType="DT_WSTR" length="500" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="experience_level" dataType="DT_WSTR" length="500" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="years_experience" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="skills" dataType="DT_WSTR" length="4000" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="salary_raw" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="salary_min_egp" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="salary_max_egp" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="post_date_raw" dataType="DT_WSTR" length="300" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="job_url" dataType="DT_WSTR" length="1000" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="search_keyword" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="scraped_at" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="load_date" dataType="DT_WSTR" length="27" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="is_processed" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="error_message" dataType="DT_WSTR" length="1000" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_url]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Inputs[Lookup Input].Columns[job_url]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="job_url"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_url]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">job_url</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[JobPostings]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[job_title]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="job_title"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_title]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_title]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[company_name]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="company_name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company_name]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[company_name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[location]"
+                          cachedDataType="wstr"
+                          cachedLength="500"
+                          cachedName="location"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[location]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[job_type]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="job_type"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_type]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_type]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[experience_level]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="experience_level"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[experience_level]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[experience_level]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[years_experience]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="years_experience"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[years_experience]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[years_experience]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[skills]"
+                          cachedDataType="wstr"
+                          cachedLength="4000"
+                          cachedName="skills"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[skills]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[skills]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[salary_raw]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="salary_raw"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary_raw]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_raw]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[salary_min_egp]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="salary_min_egp"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary_min_egp]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_min_egp]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[salary_max_egp]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="salary_max_egp"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary_max_egp]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[salary_max_egp]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[post_date_raw]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="post_date_raw"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[post_date_raw]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[post_date_raw]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[job_url]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="job_url"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_url]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_url]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[search_keyword]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="search_keyword"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[search_keyword]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[search_keyword]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[scraped_at]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="scraped_at"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[scraped_at]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[scraped_at]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[load_date]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="load_date"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[load_date]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[load_date]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[is_processed]"
+                          cachedDataType="bool"
+                          cachedName="is_processed"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[is_processed]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[is_processed]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[error_message]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="error_message"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[error_message]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[error_message]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stg_id]"
+                          dataType="i4"
+                          name="stg_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_title]"
+                          dataType="wstr"
+                          length="500"
+                          name="job_title" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[company_name]"
+                          dataType="wstr"
+                          length="500"
+                          name="company_name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                          dataType="wstr"
+                          length="500"
+                          name="location" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_type]"
+                          dataType="wstr"
+                          length="1000"
+                          name="job_type" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[experience_level]"
+                          dataType="wstr"
+                          length="1000"
+                          name="experience_level" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[years_experience]"
+                          dataType="wstr"
+                          length="100"
+                          name="years_experience" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[skills]"
+                          dataType="wstr"
+                          length="4000"
+                          name="skills" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary_raw]"
+                          dataType="wstr"
+                          length="200"
+                          name="salary_raw" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary_min_egp]"
+                          dataType="wstr"
+                          length="50"
+                          name="salary_min_egp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[salary_max_egp]"
+                          dataType="wstr"
+                          length="50"
+                          name="salary_max_egp" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[post_date_raw]"
+                          dataType="wstr"
+                          length="1000"
+                          name="post_date_raw" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_url]"
+                          dataType="wstr"
+                          length="1000"
+                          name="job_url" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[search_keyword]"
+                          dataType="wstr"
+                          length="200"
+                          name="search_keyword" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[scraped_at]"
+                          dataType="wstr"
+                          length="50"
+                          name="scraped_at" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[load_date]"
+                          dataType="wstr"
+                          length="27"
+                          name="load_date" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[is_processed]"
+                          dataType="bool"
+                          name="is_processed" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[error_message]"
+                          dataType="wstr"
+                          length="1000"
+                          name="error_message" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stg].[ErrorLog]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.EgyptianJobMarket]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[error_message]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="error_message"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_message]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output].Columns[error_message]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[package_name]"
+                          cachedDataType="wstr"
+                          cachedLength="11"
+                          cachedName="package_name"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[package_name]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Output].Columns[package_name]" />
+                        <inputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[job_url]"
+                          cachedDataType="wstr"
+                          cachedLength="1000"
+                          cachedName="job_url"
+                          externalMetadataColumnId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[raw_data]"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output].Columns[job_url]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_id]"
+                          dataType="i4"
+                          name="error_id" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[package_name]"
+                          dataType="wstr"
+                          length="200"
+                          name="package_name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[error_message]"
+                          dataType="wstr"
+                          length="2000"
+                          name="error_message" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[raw_data]"
+                          dataType="wstr"
+                          length="4000"
+                          name="raw_data" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[logged_at]"
+                          dataType="wstr"
+                          length="27"
+                          name="logged_at" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Loop Container\Load CSV to Staging.Paths[Derived Column Output]"
+                  endId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Load CSV to Staging.Paths[Derived Column Output1]"
+                  endId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Load CSV to Staging.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Load CSV to Staging.Paths[Lookup Error Output]"
+                  endId="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Lookup Error Output"
+                  startId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup Error Output]" />
+                <path
+                  refId="Package\Foreach Loop Container\Load CSV to Staging.Paths[Lookup No Match Output]"
+                  endId="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Foreach Loop Container\Load CSV to Staging\Lookup.Outputs[Lookup No Match Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Move to archive"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
+          DTS:Description="File System Task"
+          DTS:DTSID="{ED0FB9FF-2044-4F08-96BC-9F4CBDB7D29F}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move to archive"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::FilePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::ArchiveFilePath"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{822AC2B7-1CE8-48E5-8E5E-6943917A51C0}"
+          DTS:From="Package\Foreach Loop Container\Load CSV to Staging"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Loop Container\Move to archive" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{EC390DE5-D54E-405F-95E2-5623FE8232FE}"
+          DTS:ObjectName="{EC390DE5-D54E-405F-95E2-5623FE8232FE}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FilePath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5D074FBF-DB30-46E7-9E3E-92475AABDD1C}"
+      DTS:Expression="@[User::HasRows] == 1"
+      DTS:From="Package\Check for new files"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Check for new files"
+          TopLeft="121.923079578393,28.9354829947144" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging"
+          TopLeft="7.40000882034155,5.5" />
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Foreach Loop Container\Move to archive"
+          TopLeft="6.24616264136614,101.406442291599" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="97.0000088203415,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.5538461789754,54.3064422915991"
+              Start="0,0"
+              End="-13.5538461789754,46.8064422915991">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.1532211457995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.1532211457995"
+                    Point2="0,27.1532211457995"
+                    Point3="-4,27.1532211457995" />
+                  <mssgle:LineSegment
+                    End="-9.55384617897541,27.1532211457995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.55384617897541,27.1532211457995"
+                    Point2="-13.5538461789754,27.1532211457995"
+                    Point3="-13.5538461789754,31.1532211457995" />
+                  <mssgle:LineSegment
+                    End="-13.5538461789754,46.8064422915991" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="216,198"
+          Size="216,241.2"
+          Id="Package\Foreach Loop Container"
+          TopLeft="116.153848683517,153.483866319789" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="206.723079578393,70.5354829947144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.4307691051233,82.948383325075"
+              Start="0,0"
+              End="17.4307691051233,75.448383325075">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.4741916625375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.4741916625375"
+                    Point2="0,41.4741916625375"
+                    Point3="4,41.4741916625375" />
+                  <mssgle:LineSegment
+                    End="13.4307691051233,41.4741916625375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.4307691051233,41.4741916625375"
+                    Point2="17.4307691051233,41.4741916625375"
+                    Point3="17.4307691051233,45.4741916625375" />
+                  <mssgle:LineSegment
+                    End="17.4307691051233,75.448383325075" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Load CSV to Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging\Flat File Source"
+          TopLeft="189.615388744946,38.5806439929525" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging\Derived Column"
+          TopLeft="190.38461953093,153.064511493779" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load CSV to Staging.Paths[Flat File Source Output]"
+          TopLeft="267.600004137938,80.1806439929525">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.8838675008264"
+              Start="0,0"
+              End="0,65.3838675008264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.3838675008264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging\Derived Column 1"
+          TopLeft="290.0000063158,376.903215240614" />
+        <NodeLayout
+          Size="114.4,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging\Lookup"
+          TopLeft="193.846158067856,262.851605258232" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load CSV to Staging.Paths[Derived Column Output]"
+          TopLeft="268.38461953093,194.664511493779">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.338461463074,68.1870937644536"
+              Start="0,0"
+              End="-17.338461463074,60.6870937644536">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.0935468822268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.0935468822268"
+                    Point2="0,34.0935468822268"
+                    Point3="-4,34.0935468822268" />
+                  <mssgle:LineSegment
+                    End="-13.338461463074,34.0935468822268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.338461463074,34.0935468822268"
+                    Point2="-17.338461463074,34.0935468822268"
+                    Point3="-17.338461463074,38.0935468822268" />
+                  <mssgle:LineSegment
+                    End="-17.338461463074,60.6870937644536" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination"
+          TopLeft="66.1538475945857,381.638699416365" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load CSV to Staging.Paths[Lookup No Match Output]"
+          TopLeft="251.046158067856,304.451605258233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97.2923104732702,77.1870941581328"
+              Start="0,0"
+              End="-97.2923104732702,69.6870941581328">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5935470790664" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5935470790664"
+                    Point2="0,38.5935470790664"
+                    Point3="-4,38.5935470790664" />
+                  <mssgle:LineSegment
+                    End="-93.2923104732702,38.5935470790664" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93.2923104732702,38.5935470790664"
+                    Point2="-97.2923104732702,38.5935470790664"
+                    Point3="-97.2923104732702,42.5935470790664" />
+                  <mssgle:LineSegment
+                    End="-97.2923104732702,69.6870941581328" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-104.452541955385,43.5935470790664,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1"
+          TopLeft="301.153852712562,466.232245314394" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load CSV to Staging.Paths[Lookup Error Output]"
+          TopLeft="268.779491401189,304.451605258233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="103.620514914611,72.4516099823812"
+              Start="0,0"
+              End="103.620514914611,64.9516099823812">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5802435238412" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5802435238412"
+                    Point2="0,29.5802435238412"
+                    Point3="4,29.5802435238412" />
+                  <mssgle:LineSegment
+                    End="99.620514914611,29.5802435238412" />
+                  <mssgle:CubicBezierSegment
+                    Point1="99.620514914611,29.5802435238412"
+                    Point2="103.620514914611,29.5802435238412"
+                    Point3="103.620514914611,33.5802435238412" />
+                  <mssgle:LineSegment
+                    End="103.620514914611,64.9516099823812" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="5.94387073855547,34.5802435238412,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Load CSV to Staging.Paths[Derived Column Output1]"
+          TopLeft="372.4000063158,418.503215240614">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.7538463967616,47.7290300737806"
+              Start="0,0"
+              End="20.7538463967616,40.2290300737806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.8645150368903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.8645150368903"
+                    Point2="0,23.8645150368903"
+                    Point3="4,23.8645150368903" />
+                  <mssgle:LineSegment
+                    End="16.7538463967616,23.8645150368903" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.7538463967616,23.8645150368903"
+                    Point2="20.7538463967616,23.8645150368903"
+                    Point3="20.7538463967616,27.8645150368903" />
+                  <mssgle:LineSegment
+                    End="20.7538463967616,40.2290300737806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Load CSV to Staging\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[stg].[JobPostings]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Load CSV to Staging\OLE DB Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
