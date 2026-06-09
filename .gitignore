@@ -1,25 +1,20 @@
-# Scraped data — don't commit raw data to git
+# Python
+scraper/.venv/
+scraper/venv/
+scraper/__pycache__/
+scraper/*.pyc
+scraper/scraper.log
+
+# Scraped data
 scraper/output/
-*.csv
+scraper/output/archive/
+
+# VS Code
+.vscode/
+
+# SSIS build artifacts
+etl/EgyptianJobMarket_ETL/EgyptianJobMarket_ETL/bin/
+etl/EgyptianJobMarket_ETL/EgyptianJobMarket_ETL/obj/
 
 # Logs
 *.log
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
-.env
-venv/
-.venv/
-
-# SSIS build artifacts
-etl/bin/
-etl/obj/
-
-# Power BI temp files
-*.pbix.lock
-
-# OS
-.DS_Store
-Thumbs.db
