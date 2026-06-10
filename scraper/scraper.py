@@ -37,7 +37,6 @@ log = logging.getLogger(__name__)
 BASE_URL     = "https://wuzzuf.net"
 LISTING_URL  = "https://wuzzuf.net/a/{slug}-Jobs-in-Egypt"
 
-# No Accept-Encoding — let requests decompress automatically
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -62,7 +61,7 @@ DEFAULT_KEYWORDS = [
 
 EXPERIENCE_LEVELS = {
     "entry level", "experienced", "manager", "senior", "junior",
-    "intern", "internship", "graduate", "fresh grad"
+    "intern", "internship", "graduate", "fresh grad", "senior management"
 }
 JOB_TYPES = {
     "full time", "part time", "freelance", "contract",
@@ -79,7 +78,6 @@ def clean(el) -> str:
     if el is None:
         return ""
     if hasattr(el, "get_text"):
-        # Strip HTML comments (<!-- -->) that Wuzzuf injects between city parts
         for c in el.find_all(string=lambda t: isinstance(t, Comment)):
             c.extract()
         return re.sub(r"\s+", " ", el.get_text(" ", strip=True)).strip()
@@ -125,20 +123,35 @@ def fetch_page(slug: str, start: int, session: requests.Session):
 
 def find_cards(soup: BeautifulSoup) -> list:
     """
-    Find job card containers using structural logic, not CSS class names.
-    Strategy: locate every <a href="/jobs/p/..."> (job title link),
-    then walk up the DOM until we reach a container that also holds
-    a company link (/jobs/careers/). That container = one card.
+    Find individual job card containers.
+    Each card is a div with class containing 'e1v1l3u10' — this is the
+    stable Emotion.js instance class that identifies a single card.
+    Fallback: walk up from each job title link until we find a container
+    that has ONLY ONE /jobs/p/ link inside it.
     """
     cards = []
     seen  = set()
 
+    # Primary strategy: find divs with the stable instance class e1v1l3u10
+    # This class identifies a single card component instance
+    for div in soup.find_all("div", class_=re.compile(r"e1v1l3u10")):
+        job_links = div.find_all("a", href=re.compile(r"^/jobs/p/"))
+        if len(job_links) == 1 and id(div) not in seen:
+            seen.add(id(div))
+            cards.append(div)
+
+    if cards:
+        return cards
+
+    # Fallback: walk up from each title link, stop when container has exactly 1 job link
     for title_link in soup.find_all("a", href=re.compile(r"^/jobs/p/")):
-        container = title_link.parent  # start at <h2>
-        for _ in range(6):
+        container = title_link.parent
+        for _ in range(8):
             if container is None:
                 break
-            if container.find("a", href=re.compile(r"/jobs/careers/")):
+            job_links_in_container = container.find_all("a", href=re.compile(r"^/jobs/p/"))
+            company_link = container.find("a", href=re.compile(r"/jobs/careers/"))
+            if len(job_links_in_container) == 1 and company_link:
                 break
             container = container.parent
 
@@ -152,18 +165,6 @@ def find_cards(soup: BeautifulSoup) -> list:
 # ── Card parser ───────────────────────────────────────────────────────────────
 
 def parse_card(card, slug: str, scraped_at: str) -> dict | None:
-    """
-    Parse one job card using structural position, not CSS class names.
-
-    Confirmed card structure (from live HTML inspection):
-      container div
-        ├── <a href="/jobs/careers/..."><img></a>        ← logo (skip)
-        ├── <a href="/jobs/careers/...">Company -</a>    ← company name
-        ├── <span>City, Country</span>                   ← location
-        ├── <div>N days ago</div>                        ← post date
-        ├── <h2><a href="/jobs/p/...">Title</a></h2>     ← job title
-        └── tags: Full Time, Hybrid, Entry Level, skills...
-    """
     try:
         # ── Title ──
         title_link = card.find("a", href=re.compile(r"^/jobs/p/"))
@@ -173,32 +174,26 @@ def parse_card(card, slug: str, scraped_at: str) -> dict | None:
         job_url = BASE_URL + title_link["href"]
 
         # ── Company ──
-        # The company <a> links to /jobs/careers/ AND contains visible text (not just an img)
         company = ""
         for a in card.find_all("a", href=re.compile(r"/jobs/careers/")):
             text = clean(a)
-            if text:                       # skip the logo-only link
+            if text:
                 company = text.rstrip(" -–").strip()
                 break
 
         # ── Location ──
-        # Sits in a <span> that is a sibling of the company <a>, inside the same wrapper div.
-        # Contains city parts separated by <!-- --> comments e.g. "Nasr City, Cairo, Egypt"
         location = ""
-        company_el = card.find("a", href=re.compile(r"/jobs/careers/"), string=True)
-        if not company_el:
-            # fallback: first careers link with text content
-            for a in card.find_all("a", href=re.compile(r"/jobs/careers/")):
-                if clean(a):
-                    company_el = a
-                    break
+        company_el = None
+        for a in card.find_all("a", href=re.compile(r"/jobs/careers/")):
+            if clean(a):
+                company_el = a
+                break
         if company_el:
             span = company_el.find_next_sibling("span")
             if span:
                 location = clean(span)
 
         # ── Post date ──
-        # A short <div> or <span> whose text matches time patterns
         post_date = ""
         for el in card.find_all(["div", "span"]):
             t = clean(el)
@@ -206,25 +201,48 @@ def parse_card(card, slug: str, scraped_at: str) -> dict | None:
                 post_date = t
                 break
 
-        # ── Classify all tag links ──
-        # Every tag is an <a href="/a/..."> or <a href="https://wuzzuf.net/a/...">
+        # ── Tags: only from THIS card's tag section ──
+        # The tag section is a div that comes AFTER the title/company block
+        # and contains only /a/ links. We identify it by finding the div
+        # that directly contains the job type / experience / skill links.
+        # Key insight: only look at <a> tags that are DIRECT descendants
+        # of the card, not nested inside the title or company sections.
+
         job_types  = []
         experience = []
         skills     = []
 
-        for a in card.find_all("a", href=re.compile(r"/a/")):
-            label = clean(a).lstrip("·").strip()
-            if not label:
-                continue
-            low = label.lower()
-            if any(jt in low for jt in JOB_TYPES):
-                job_types.append(label)
-            elif any(el in low for el in EXPERIENCE_LEVELS):
-                experience.append(label)
-            else:
-                skills.append(label)
+        # Find the tags wrapper div — it's the div after css-lptxge (title block)
+        # It contains short text links like "Full Time", "On-site", "Entry Level"
+        title_block = card.find("div", class_=re.compile(r"css-lptxge"))
+        tag_divs = []
+        if title_block:
+            # Get all sibling divs after the title block
+            for sibling in title_block.find_next_siblings("div"):
+                tag_divs.append(sibling)
+        
+        # Search for /a/ tags only within the tag divs (not title/company area)
+        search_area = tag_divs if tag_divs else [card]
+        
+        for area in search_area:
+            for a in area.find_all("a", href=re.compile(r"/a/")):
+                label = clean(a).lstrip("·").strip()
+                if not label or len(label) > 100:  # skip very long labels
+                    continue
+                low = label.lower()
+                if any(jt in low for jt in JOB_TYPES):
+                    job_types.append(label)
+                elif any(el in low for el in EXPERIENCE_LEVELS):
+                    experience.append(label)
+                else:
+                    skills.append(label)
 
-        # ── Years of experience (plain text node like "0 - 3 Yrs of Exp") ──
+        # Deduplicate while preserving order
+        job_types  = list(dict.fromkeys(job_types))
+        experience = list(dict.fromkeys(experience))
+        skills     = list(dict.fromkeys(skills))
+
+        # ── Years of experience ──
         years_exp = ""
         for s in card.strings:
             t = s.strip()
@@ -334,7 +352,6 @@ def run(keywords: list[str], max_pages: int, output_path: str) -> pd.DataFrame:
     if df["company_name"].str.strip().any():
         print(f"\nTop companies:\n{df['company_name'].value_counts().head(5).to_string()}")
     if df["skills"].str.strip().any():
-        # Flatten all skills to find most common
         all_skills = df["skills"].dropna().str.split(" | ").explode()
         all_skills = all_skills[all_skills.str.strip() != ""]
         print(f"\nTop skills:\n{all_skills.value_counts().head(10).to_string()}")
